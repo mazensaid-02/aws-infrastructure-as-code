@@ -1,0 +1,16 @@
+services:
+  localstack:
+    image: localstack/localstack:2026.10.4
+    container_name: aws-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: s3,dynamodb,iam
+      DEBUG: "0"
+      LOCALSTACK_AUTH_TOKEN: ${LOCALSTACK_AUTH_TOKEN:?LocalStack token is required}
+      PERSISTENCE: "1"
+    volumes:
+      - localstack_data:/var/lib/localstack
+
+volumes:
+  localstack_data:
