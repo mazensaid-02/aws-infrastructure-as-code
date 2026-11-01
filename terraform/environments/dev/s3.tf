@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "inventory_files" {
-  bucket = "mazensaid-inventory-files"
+  bucket = var.inventory_bucket_name
 }
 
 resource "aws_s3_bucket_versioning" "inventory_files" {

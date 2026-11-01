@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 
   # Dummy credentials for LocalStack
   access_key = "test"
